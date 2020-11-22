@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  min-height: 108px;
+  background-color: #e3eaec;
+  border-top: 1px solid #ebf2f4;
+  font-size: 14px;
+}
+
+.footer__item {
+  padding: 15px 30px;
+}
+
+.footer__inscription {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.footer__item-text {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.footer__sections {
+  display: flex;
+  flex-direction: column;
+  padding-left: 55px;
+  padding-right: 45px;
+  flex: 0 0 35%;
+  max-width: 35%;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  flex: 0 0 45%;
+  max-width: 45%;
+}
