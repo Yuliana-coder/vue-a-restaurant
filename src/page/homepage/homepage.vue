@@ -1,15 +1,15 @@
 <template>
   <div class="homepage page">
     <section class="homepage-sections">
-      <div class="homepage__section homepage__section-description">
-        О нас
-      </div>
-      <div class="homepage__section homepage__section-reservation">
+      <router-link :to="'/description'" class="homepage__section homepage__section-description">
+        О ресторане
+      </router-link>
+      <router-link :to="'/reservation'" class="homepage__section homepage__section-reservation">
         Забронировать столик
-      </div>
-      <div class="homepage__section homepage__section-menu">
+      </router-link>
+      <router-link :to="'/'" class="homepage__section homepage__section-menu">
         Полистать меню
-      </div>
+      </router-link>
     </section>
   </div>
 </template>

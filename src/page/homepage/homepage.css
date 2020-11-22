@@ -1,6 +1,34 @@
-.homepage {
-
-}
 .homepage-sections {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage__section {
+  flex: 0 0 33.33%;
+  max-height: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: darkgrey;
+}
+
+.homepage__section:hover {
+  z-index: 10;
+  box-shadow: 10px 0 10px #496791;
+  color: black;
+  font-weight: 500;
+}
+
+.homepage__section-description {
+  background-color: #ebdbd4;
+}
+
+.homepage__section-reservation {
+  background-color: #fef5f4;
+}
+
+.homepage__section-menu {
+  background-color: #f7dfef;
 }

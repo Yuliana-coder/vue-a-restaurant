@@ -7,7 +7,9 @@ const store = new Vuex.Store({
   modules: {},
   getters: {},
   actions: {},
-  state: {},
+  state: {
+    isAuthorized: false,
+  },
   mutations: {},
 });
 
