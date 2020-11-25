@@ -17,6 +17,29 @@ export default {
         "12",
         "13",
       ],
+      formData: {
+        name: "",
+        reservationTime: null,
+        tableNum: 1, // первый из списка доступных к бронированию
+      },
     };
+  },
+  methods: {
+    confirmReservation() {
+      console.log("click");
+    },
+  },
+  computed: {
+    isNotAllData: function() {
+      let res = true;
+      if (
+        this.formData.name &&
+        this.formData.reservationTime &&
+        this.formData.tableNum
+      ) {
+        res = false;
+      }
+      return res;
+    },
   },
 };
