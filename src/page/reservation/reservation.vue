@@ -17,7 +17,7 @@
             <label class="reservation-data__item-label" for="table-num">
                 Номер столика
             </label>
-            <select v-model="formData.tableNum">
+            <select  @change="setQauntaty" v-model="formData.tableNum">
                 <option v-for="(num, key) in tables" :key="key" :value="num">{{num}}</option>
             </select>
             <div class="reservation-data__item-text">*В списке представлены доступные для брони столики</div>
@@ -32,6 +32,19 @@
                 Оформить бронь 
             </button>
         </div>
+    </div>
+    <div v-if="isShowPopup && formData.name && quantatyPlaces" class="popup">
+        <div class="popup-inner">
+            {{formData.name}}, столик под номером {{formData.tableNum}} был успешно забронирован!
+             Ваш столик будет включать {{quantatyPlaces}} посадочных мест(a).
+             <div>
+                 Ждем Вас! <br /><br /> Напоминаем, что в период пандемии, мы заботимся о своих клиентах, и очень просим Вас носить маску, которые мы Вам обязательно дадим. <br />
+                 Все вопросы можете задавать нам по телефону, а также написать нам в WhatsApp или по почте.
+                 79171212155
+                 rest@mail.ru
+             </div>
+        </div>
+        <button @click="exitPopup">Ok</button>
     </div>
   </div>
 </template>

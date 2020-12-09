@@ -1,0 +1,11 @@
+.description {
+  padding: 50px 70px;
+}
+
+.description__title {
+  margin-bottom: 20px;
+}
+
+.description__description {
+  margin-bottom: 15px;
+}

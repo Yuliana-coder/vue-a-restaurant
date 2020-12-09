@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export default {
   name: "Reservation",
   data() {
@@ -21,12 +23,59 @@ export default {
         name: "",
         reservationTime: null,
         tableNum: 1, // первый из списка доступных к бронированию
+        isShowЫuccessPopup: false,
       },
+      allTables: null,
+      freeTables: null,
+      orders: null,
+      quantatyPlaces: 0,
+      isShowPopup: false,
     };
+  },
+  beforeMount() {
+    axios.get("http://127.0.0.1:8000/api/table/").then((response) => {
+      if (response && response.data && response.data.length) {
+        this.allTables = response.data;
+        console.log(response.data);
+      }
+    });
+
+    axios.get("http://127.0.0.1:8000/api/order/").then((response) => {
+      if (response && response.data && response.data.length) {
+        this.orders = response.data.map((item) => {
+          return String(item.numberTable);
+        });
+        console.log(this.tables);
+        console.log(this.orders);
+        this.tables = this.tables.filter((x) => this.orders.indexOf(x) == -1);
+        if (this.tables && this.tables.length) {
+          this.tableNum = this.tables[0];
+        }
+      }
+    });
   },
   methods: {
     confirmReservation() {
+      this.isShowPopup = true;
+      const formdata = {
+        clientName: this.formData.name,
+        orderTime: this.formData.reservationTime,
+        numberTable: this.formData.tableNum,
+      };
+      axios.post("http://127.0.0.1:8000/api/order/", formdata).then(() => {
+        this.isShowЫuccessPopup = true;
+      });
       console.log("click");
+    },
+    setQauntaty() {
+      // console.log(Number(this.formData.tableNum), "hhhhh");
+      this.quantatyPlaces = this.allTables.find((item) => {
+        return item.number === Number(this.formData.tableNum);
+      }).quantityPlaces;
+    },
+    exitPopup() {
+      this.$router.push("/");
+      this.isShowPopup = false;
     },
   },
   computed: {
@@ -41,5 +90,10 @@ export default {
       }
       return res;
     },
+    // qauntatyPlaces: function() {
+    //   return this.allTables.find((item) => {
+    //     return item.number === Number(this.formData.numberTable);
+    //   }).qauntatyPlaces;
+    // },
   },
 };
