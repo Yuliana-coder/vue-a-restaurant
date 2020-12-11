@@ -7,7 +7,7 @@
       <router-link :to="'/reservation'" class="homepage__section homepage__section-reservation">
         Забронировать столик
       </router-link>
-      <router-link :to="'/'" class="homepage__section homepage__section-menu">
+      <router-link :to="'/menu'" class="homepage__section homepage__section-menu">
         Полистать меню
       </router-link>
     </section>
