@@ -15,6 +15,8 @@ const Reservation = () =>
 
 const Menu = () => import(/* "menu-page" */ "@/page/menu/menu.vue");
 
+const Dish = () => import(/* "menu-page" */ "@/page/dish/dish.vue");
+
 const router = new VueRouter({
   mode: "history",
   routes: [
@@ -41,6 +43,11 @@ const router = new VueRouter({
           path: "/menu",
           name: "menu",
           component: Menu,
+        },
+        {
+          path: "/dish/:id",
+          name: "dish",
+          component: Dish,
         },
       ],
     },

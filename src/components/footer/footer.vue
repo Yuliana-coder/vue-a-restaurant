@@ -5,13 +5,13 @@
       </div>
        <div class="footer__item footer__sections">
            <div class="footer__item-title">Разделы:</div>
-           <router-link :to="'/'" class="footer__item-field">
+           <router-link :to="'/description'" class="footer__item-field">
                О нас
            </router-link>
-           <router-link :to="'/'" class="footer__item-field">
+           <router-link :to="'/reservation'" class="footer__item-field">
                Забронировать столик
            </router-link>
-           <router-link :to="'/'" class="footer__item-field">
+           <router-link :to="'/menu'" class="footer__item-field">
                Полистать меню
            </router-link>
       </div>
