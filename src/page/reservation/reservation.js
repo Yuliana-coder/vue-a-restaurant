@@ -33,10 +33,21 @@ export default {
     };
   },
   beforeMount() {
+    // axios
+    //   .post("http://127.0.0.1:8000/auth/token/login/", {
+    //     username: "Yuliana",
+    //     password: "123456HelloAuth",
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch(() => {
+    //     console.log("Пожалуйста авторизуйтесь для доступа к бронированию");
+    //   });
+
     axios.get("http://127.0.0.1:8000/api/table/").then((response) => {
       if (response && response.data && response.data.length) {
         this.allTables = response.data;
-        console.log(response.data);
       }
     });
 
@@ -45,8 +56,6 @@ export default {
         this.orders = response.data.map((item) => {
           return String(item.numberTable);
         });
-        console.log(this.tables);
-        console.log(this.orders);
         this.tables = this.tables.filter((x) => this.orders.indexOf(x) == -1);
         if (this.tables && this.tables.length) {
           this.tableNum = this.tables[0];
