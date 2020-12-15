@@ -9,3 +9,60 @@
 .description__description {
   margin-bottom: 15px;
 }
+
+.vacancies {
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 20px;
+  background-color: rgb(202, 229, 245);
+  border-radius: 8px;
+}
+
+.description-info-wrapper {
+  margin-bottom: 250px;
+}
+
+.vacancies__title-link {
+  font-size: 18px;
+  color: rgb(95, 95, 219);
+  font-weight: bold;
+}
+
+.vacancies__title {
+  margin: 15px 0;
+}
+
+.vacancies-form__title {
+  margin-bottom: 15px;
+}
+
+.vacancies-form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.vacancies-form-inputs__item {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.vacancies-form-inputs__item-label-wrapper {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vacancies-form-inputs__item-label {
+  margin-right: 5px;
+}
+
+.vacancies-form-inputs__item-input {
+  padding: 5px;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.vacancy-error {
+  color: red;
+}
