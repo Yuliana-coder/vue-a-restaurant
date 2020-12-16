@@ -23,8 +23,9 @@ export default {
       axios
         .post("http://127.0.0.1:8000/auth/token/login/", this.loginFormData)
         .then((response) => {
-          this.$router.push("/");
           localStorage.setItem("token", response.data.auth_token);
+          this.$router.push("/");
+          location.reload();
         })
         .catch(() => {
           this.isErrorLogin = true;

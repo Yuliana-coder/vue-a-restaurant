@@ -1,0 +1,57 @@
+.vacancies {
+  padding: 0 250px;
+  background-color: rgb(212, 212, 255);
+}
+
+.vacancies-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 50px;
+  background-color: white;
+}
+
+.vacancies-list__item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.vacancies-list__item::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.vacancies-list__item-name {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.vacancies-list__item-description {
+  margin-bottom: 10px;
+}
+
+.vacancies-list__item-duties,
+.vacancies-list__item-demands {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.vacancy-inscription {
+  opacity: 0.6;
+}
+
+.vacancies-list__item-salary {
+    margin-right: 10px;
+    max-width: 150px;
+    margin-left: auto;
+    font-weight: bold;
+}

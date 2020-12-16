@@ -33,37 +33,32 @@ export default {
     };
   },
   beforeMount() {
-    // axios
-    //   .post("http://127.0.0.1:8000/auth/token/login/", {
-    //     username: "Yuliana",
-    //     password: "123456HelloAuth",
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch(() => {
-    //     console.log("Пожалуйста авторизуйтесь для доступа к бронированию");
-    //   });
-
-    axios.get("http://127.0.0.1:8000/api/table/").then((response) => {
-      if (response && response.data && response.data.length) {
-        this.allTables = response.data;
-      }
-    });
-
-    axios.get("http://127.0.0.1:8000/api/order/").then((response) => {
-      if (response && response.data && response.data.length) {
-        this.orders = response.data.map((item) => {
-          return String(item.numberTable);
-        });
-        this.tables = this.tables.filter((x) => this.orders.indexOf(x) == -1);
-        if (this.tables && this.tables.length) {
-          this.tableNum = this.tables[0];
-        }
-      }
-    });
+    if (!localStorage.getItem("token")) {
+      this.$router.push("/login");
+    } else {
+      this.init();
+    }
   },
   methods: {
+    init() {
+      axios.get("http://127.0.0.1:8000/api/table/").then((response) => {
+        if (response && response.data && response.data.length) {
+          this.allTables = response.data;
+        }
+      });
+
+      axios.get("http://127.0.0.1:8000/api/order/").then((response) => {
+        if (response && response.data && response.data.length) {
+          this.orders = response.data.map((item) => {
+            return String(item.numberTable);
+          });
+          this.tables = this.tables.filter((x) => this.orders.indexOf(x) == -1);
+          if (this.tables && this.tables.length) {
+            this.tableNum = this.tables[0];
+          }
+        }
+      });
+    },
     confirmReservation() {
       this.isShowPopup = true;
       const formdata = {
@@ -77,7 +72,6 @@ export default {
       console.log("click");
     },
     setQauntaty() {
-      // console.log(Number(this.formData.tableNum), "hhhhh");
       this.quantatyPlaces = this.allTables.find((item) => {
         return item.number === Number(this.formData.tableNum);
       }).quantityPlaces;

@@ -9,7 +9,7 @@
     <div class="vacancies">
       <div class="vacancies__title">
         Если Вас интересует работа в нашем ресторане, обратите внимание на раздел 
-        <router-link to="/" class="vacancies__title-link"><span>Вакансии</span></router-link>
+        <router-link to="/vacancies" class="vacancies__title-link"><span>Вакансии</span></router-link>
       </div>
       <div class="vacancies-form">
         <div class="vacancies-form__title">

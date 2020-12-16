@@ -8,7 +8,6 @@
            </div>
            <div class="menu-list__item-description">
                <div v-if="dish.title" class="menu-list__item-description-title">{{ dish.title }}</div>
-               <!-- <div class="menu-list__item-description-content"> {{ dish.description }} </div> -->
                <div v-if="dish.weight || dish.price" class="menu-list__item-description-detail">
                    <div v-if="dish.weight" class="menu-list__item-description-detail-weight">
                        <span class="inscription">Вес:</span> <span class="inscription-inner"> {{ dish.weight }} гр.</span>

@@ -19,6 +19,9 @@ const Dish = () => import(/* "dish-page" */ "@/page/dish/dish.vue");
 
 const Login = () => import(/* "login-page" */ "@/page/login/login.vue");
 
+const Vacancies = () =>
+  import(/* "vacancies-page" */ "@/page/vacancies/vacancies.vue");
+
 const router = new VueRouter({
   mode: "history",
   routes: [
@@ -55,6 +58,11 @@ const router = new VueRouter({
           path: "/login",
           name: "login",
           component: Login,
+        },
+        {
+          path: "/vacancies",
+          name: "vacancies",
+          component: Vacancies,
         },
       ],
     },
