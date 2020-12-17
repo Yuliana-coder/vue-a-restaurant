@@ -66,3 +66,10 @@
 .vacancy-error {
   color: red;
 }
+
+.vacacies-form__confirm-btn {
+  margin-left: 10px;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 4px;
+}

@@ -61,7 +61,7 @@
                 {{vacancy.name}}
               </option>
             </select>
-            <button @click="sendVacanacy">Отправить</button>
+            <button class="vacacies-form__confirm-btn" @click="sendVacanacy">Отправить</button>
           </div>
           <div class="vacancy-error" v-if="vacancyError">
             Пожалуста, введите все обязательные поля.
