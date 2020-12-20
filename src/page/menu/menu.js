@@ -1,7 +1,11 @@
 import axios from "axios";
+import DishCard from "@/page/menu/components/dish-card/dish-card.vue";
 
 export default {
   name: "Menu",
+  components: {
+    DishCard,
+  },
   data() {
     return {
       dishes: [],

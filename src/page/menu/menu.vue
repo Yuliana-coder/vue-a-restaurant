@@ -2,7 +2,9 @@
   <div v-if="dishes && dishes.length" class="menu">
       <h1 class="menu__title">Меню</h1>
    <div class="menu-list-wrapper">
-       <router-link class="menu-list__item" v-for="(dish, key) in dishes" :key="key" :to="'/dish/' + dish.id">
+       <div class="menu-list__item" v-for="(dish, key) in dishes" :key="key">
+       <DishCard :dish="dish" />
+       <!-- <div>
            <div class="menu-list__item-img">
                <img class="menu-list__item-img-dish" src="@/assets/img/salad.jpg" alt="dish">
            </div>
@@ -17,7 +19,8 @@
                    </div>
                </div>
            </div>
-       </router-link>
+       </div> -->
+       </div>
    </div>
   </div>
 </template>
