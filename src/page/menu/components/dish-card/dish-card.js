@@ -5,20 +5,20 @@ export default {
     return {
       getCurrentQauntaty: getCurrentQauntaty,
       setCurrentQauntaty: setCurrentQauntaty,
+      currentQuantity: 0,
     };
   },
   name: "DishCard",
   props: ["dish"],
-  computed: {
-    currentQuantity() {
-      let result = this.getCurrentQauntaty(0);
-      console.log(this.getCurrentQauntaty(0));
-      return result;
-    },
+  beforeMount() {
+    this.currentQuantity = this.getCurrentQauntaty(this.dish.id);
   },
   methods: {
     setCurrentQuantaty(quantaty) {
-      this.setCurrentQauntaty(quantaty);
+      if (quantaty >= 0) {
+        this.setCurrentQauntaty(this.dish.id, quantaty);
+        this.currentQuantity = this.getCurrentQauntaty(this.dish.id);
+      }
     },
   },
 };

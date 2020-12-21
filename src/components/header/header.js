@@ -26,6 +26,7 @@ export default {
       })
         .then(() => {
           localStorage.removeItem("token");
+          localStorage.removeItem("currentOrder");
           location.reload();
         })
         .catch((error) => {

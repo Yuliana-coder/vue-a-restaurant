@@ -19,6 +19,11 @@
                        <span class="inscription">Цена:</span> <span class="inscription-inner inscription-inner_price"> {{ dish.price }} руб.</span>
                     </div>
               </div>
+                <div class="menu-list__quantity dish-quantity-wrapper">
+                    <button @click.self="setCurrentQuantaty(currentQuantity-1)" class="dish-quantity-btn dish-quantity-btn-subtract">-</button>
+                    <span> {{ currentQuantity}} </span>
+                    <button @click.self="setCurrentQuantaty(currentQuantity+1)" class="dish-quantity-btn dish-quantity-btn-add">+</button>
+                </div>
           </div>
           <div class="dish-content__img">
               <img class="dish-content__img-dish" src="@/assets/img/salad.jpg" alt="dish">

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getCurrentQauntaty, setCurrentQauntaty } from "@/common/common.js";
 
 export default {
   name: "Dish",
@@ -13,10 +14,14 @@ export default {
         dish: null,
       },
       isCommentError: false,
+      getCurrentQauntaty: getCurrentQauntaty,
+      setCurrentQauntaty: setCurrentQauntaty,
+      currentQuantity: 0,
     };
   },
   beforeMount() {
     this.init();
+    this.currentQuantity = this.getCurrentQauntaty(this.id);
   },
 
   methods: {
@@ -58,6 +63,12 @@ export default {
           });
       } else {
         this.isCommentError = true;
+      }
+    },
+    setCurrentQuantaty(quantaty) {
+      if (quantaty >= 0) {
+        this.setCurrentQauntaty(this.id, quantaty);
+        this.currentQuantity = this.getCurrentQauntaty(this.id);
       }
     },
   },
