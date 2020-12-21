@@ -32,3 +32,24 @@
 .homepage__section-menu {
   background-color: #f7dfef;
 }
+
+.homepage-sections {
+  position: relative;
+}
+
+.homepage__news-wrapper {
+  padding: 35px 15px;
+  background-color: white;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  z-index: 100;
+  font-weight: bold;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 10px 0 10px #916f49;
+}
+
+.homepage__news-wrapper:hover {
+  cursor: pointer;
+}

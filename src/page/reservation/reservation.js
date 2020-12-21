@@ -37,6 +37,13 @@ export default {
       this.$router.push("/login");
     } else {
       this.init();
+      console.log(
+        Object.keys(JSON.parse(localStorage.getItem("currentOrder"))).map(
+          (item) => {
+            return Number(item);
+          }
+        )
+      );
     }
   },
   methods: {
@@ -66,6 +73,16 @@ export default {
         orderTime: this.formData.reservationTime,
         numberTable: this.formData.tableNum,
       };
+
+      if (localStorage.getItem("currentOrder")) {
+        formdata.dishList = Object.keys(
+          JSON.parse(localStorage.getItem("currentOrder"))
+        ).map((item) => {
+          return Number(item);
+        });
+        formdata.quantityArray = localStorage.getItem("currentOrder");
+      }
+
       axios.post("http://127.0.0.1:8000/api/order/", formdata).then(() => {
         this.isShowЫuccessPopup = true;
       });

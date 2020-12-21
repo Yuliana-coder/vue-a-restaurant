@@ -44,7 +44,9 @@
                  rest@mail.ru
              </div>
         </div>
-        <button @click="exitPopup">Ok</button>
+        <div class="popup__btn-wrapper">
+            <button class="popup__btn" @click="exitPopup">Ok</button>
+        </div>
     </div>
   </div>
 </template>

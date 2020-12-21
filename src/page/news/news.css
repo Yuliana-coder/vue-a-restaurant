@@ -1,0 +1,13 @@
+.news {
+  padding: 30px 50px;
+}
+
+.news__title {
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
+
+.news__item {
+  padding: 20px;
+  margin-bottom: 25px;
+}
