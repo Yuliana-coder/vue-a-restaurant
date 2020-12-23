@@ -1,0 +1,64 @@
+.book {
+  padding: 30px 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.book__title {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-form__item {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.book-form__item-label-wrapper {
+  display: inline;
+}
+
+.book-form__item-label-wrapper {
+  min-width: 280px;
+}
+
+.book-form__item-button-wrapper {
+  margin-bottom: 15px;
+}
+
+.book-form__item-input {
+  padding: 5px;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.book-form__item-btn {
+  border: none;
+  background-color: transparent;
+  color: green;
+}
+
+.book-form__item-btn:hover {
+  color: black;
+}
+
+.book__btn-confirm {
+  margin-top: 20px;
+  background-color: transparent;
+  padding: 10px 27px;
+  border: 1px solid gray;
+  border-radius: 7px;
+}
+
+.book__btn-confirm_active:hover {
+  background-color: rgb(176, 255, 176);
+  color: green;
+  border: none;
+}

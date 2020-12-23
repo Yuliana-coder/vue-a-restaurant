@@ -24,6 +24,8 @@ const Vacancies = () =>
 
 const News = () => import(/* "news-page" */ "@/page/news/news.vue");
 
+const Book = () => import(/* "book-page" */ "@/page/book/book.vue");
+
 const router = new VueRouter({
   mode: "history",
   routes: [
@@ -70,6 +72,11 @@ const router = new VueRouter({
           path: "/news",
           name: "news",
           component: News,
+        },
+        {
+          path: "/book",
+          name: "book",
+          component: Book,
         },
       ],
     },

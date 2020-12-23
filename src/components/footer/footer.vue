@@ -17,6 +17,9 @@
             <router-link :to="'/vacancies'" class="footer__item-field">
                Вакансии
            </router-link>
+           <router-link :to="'/news'" class="footer__item-field">
+               Новости
+           </router-link>
       </div>
        <div class="footer__item footer__contacts">
            <a href="tel:+1234567890"> +1234567890 </a>

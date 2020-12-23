@@ -8,13 +8,13 @@
                     {{ newItem.title }}
                 </div>
                 <div class="news__item-topic">
-                    {{ newItem.articleTopic }}
+                   <span class="news__item-topic_sign">тема: </span> {{ newItem.articleTopic }}
                 </div>
                 <div class="news__item-description">
                     {{ newItem.description }}
                 </div>
                 <div class="news__item-date">
-                    {{ newItem.datePublication }}
+                    <div> {{ newItem.datePublication }} </div>
                 </div>
             </div>
         </div>
