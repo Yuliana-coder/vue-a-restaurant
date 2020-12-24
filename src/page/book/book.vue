@@ -34,10 +34,12 @@
                 </div>
             </template>
         </div>
-        <button class="book__btn-confirm" @click="confirmPetition" :class="{'book__btn-confirm_active': isValidFields }" :disabled="!isValidFields">Отправить</button>
+        <button class="book__btn-confirm" @click="confirmPetition" :class="{'book__btn-confirm_active': isValidFields }" :disabled="!isValidFields || isConfirm">Отправить</button>
         <div class="popup" v-if="isConfirm">
             <div>Благодарим Вас за обращение!</div>
-            <button>Ок</button>
+            <div class="popup__btn-wrapper">
+                <button class="popup__btn" @click="goToHomepage">Ок</button>
+            </div>
         </div>
     </div>
 </template>

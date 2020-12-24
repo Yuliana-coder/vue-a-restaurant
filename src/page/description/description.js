@@ -15,6 +15,7 @@ export default {
         vacancy: null,
       },
       vacancyError: false,
+      isConfirm: false,
     };
   },
   beforeMount() {
@@ -58,14 +59,20 @@ export default {
           .post("http://127.0.0.1:8000/api/jobapplication/", this.application)
           .then((response) => {
             console.log(response);
+            this.isConfirm = true;
             this.init();
           })
           .catch((error) => {
             console.log(error);
+            this.isConfirm = false;
           });
       } else {
         this.vacancyError = true;
       }
+    },
+    goToHomepage() {
+      this.$router.push("/");
+      this.isConfirm = false;
     },
   },
 };

@@ -52,5 +52,9 @@ export default {
           console.log(error);
         });
     },
+    goToHomepage() {
+      this.$router.push("/");
+      this.isConfirm = false;
+    },
   },
 };

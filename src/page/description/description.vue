@@ -61,12 +61,17 @@
                 {{vacancy.name}}
               </option>
             </select>
-            <button class="vacacies-form__confirm-btn" @click="sendVacanacy">Отправить</button>
+            <button class="vacacies-form__confirm-btn" @click="sendVacanacy" :disabled="isConfirm">Отправить</button>
           </div>
           <div class="vacancy-error" v-if="vacancyError">
             Пожалуста, введите все обязательные поля.
           </div>
-
+          <div class="popup" v-if="isConfirm">
+            <div>Благодарим Вас за оставленную заявку! Мы обязательно свяжемся с Вами в течение 3-х рабочих дней!</div>
+            <div class="popup__btn-wrapper">
+                <button class="popup__btn" @click="goToHomepage">Ок</button>
+            </div>
+        </div>
         </div>
       </div>
     </div>
