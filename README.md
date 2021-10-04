@@ -26,7 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Учебный проект "Сайт бронирования столика в ресторане"
 
-Бекенд написан на Jango (https://github.com/Yuliana-coder/reservation)
+Бекенд написан на Django (https://github.com/Yuliana-coder/reservation)
 
 Фронтенд фреймвор Vue.js
 
